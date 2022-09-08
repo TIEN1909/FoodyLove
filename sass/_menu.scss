@@ -1,0 +1,20 @@
+.menu{
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    background-color: $agba;
+    transition: $transition;
+    min-width: 200px;
+    &__list{
+        &-item{
+            display: block;
+            padding: 15px 10px;
+            border-bottom: 1px solid white;
+            color: white;
+            &:hover{
+                color: $orange;
+                border-bottom: 1px solid $orange;
+            }
+        }
+    }
+}

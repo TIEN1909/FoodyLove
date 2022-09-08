@@ -1,0 +1,121 @@
+.footer{
+    background: url("../images/bgr-footer.jpg");
+    padding: 55px 0 32px 0;
+    position: relative;
+    overflow: hidden;
+    &__main{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 0 90px;
+    }
+    &__title{
+        font-size: 30px;
+        color: white;
+        text-align: center;
+        margin-bottom: 70px;
+    }
+    &__text{
+        color: white;
+        text-align: center;
+    }
+    &__icons{
+        @include display (flex, space-between,center);
+        margin-top: 105px;
+    }
+    &__working{
+        &--bottom{
+            margin-bottom: 50px;
+            
+        }
+    }
+    &__feedback{
+        @include display(flex, center);
+        flex-direction: column;
+    }
+    &__feedback{
+        &--bottom{
+            margin-bottom: 20px;
+            text-align: start;
+        }
+    }
+    &__image:nth-of-type(1),&__image:nth-of-type(2){
+        @include absolute("top");
+    }
+    &__image:nth-of-type(1){
+        left:-13%;
+    }
+    &__image:nth-of-type(2){
+        right: -10%;
+    }
+}
+.form{
+    &__infos{
+        @include display(flex, center);
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    &__info,&__message{
+        @include feedback (370px, 20px 25px, $gray,5px,white);
+    }
+    &__info{
+        margin-bottom: 10px;
+    }
+    &__message{
+        min-height: 80px;
+        resize: none;
+        margin-bottom: 15px;
+    }
+}
+@include maxw(1023px) {
+    .footer{
+        &__main{
+            grid-template-columns: repeat(1, 1fr);
+        }
+        &__feedback{
+            margin-top: 40px;
+            &--bottom{
+                text-align: center;
+            }
+        }
+        &__image:nth-of-type(1),&__image:nth-of-type(2){
+            top:70%;
+        }
+        &__image:nth-of-type(1){
+            left:-22%;
+        }
+        &__image:nth-of-type(2){
+            right: -17%;
+        }
+        &__icons{
+            justify-content: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+        &__icon{
+            padding: 0 15px;
+        }
+    }
+    .form__infos{
+        align-items: center;
+        gap: 0 10px;
+    }
+  }
+  @include minw(1024px) {
+    // .footer{
+    //     &__image:nth-of-type(1),&__image:nth-of-type(2){
+    //         top:100%;
+    //     }
+    //     &__image:nth-of-type(1){
+    //         left:20%;
+    //     }
+    //     &__image:nth-of-type(2){
+    //         right: 30%;
+    //     }
+    //     &__icons{
+    //         margin-top: 40px;
+    //     }
+    // }
+    .form__infos{
+        align-items: center;
+    }
+  }

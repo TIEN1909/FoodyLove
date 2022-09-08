@@ -1,0 +1,42 @@
+@mixin display ($value1, $value2:"", $value3:""){
+    display: $value1;
+    justify-content: $value2;
+    align-items: $value3;
+}
+@mixin feedback ($value1:"", $value2:"", $value3:"",$value4:"",$value5:""){
+    width: $value1;
+    padding: $value2;
+    background-color: $value3 ;
+    border-radius: $value4;
+    color: $value5;
+}
+@mixin absolute ($description :"both"){
+    position:absolute;
+    @if $description == 'both'{
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    @if $description == 'top'{
+        top:50%;
+        transform: translateY(-50%);
+    }
+    @if $description == "left"{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $description == "bottom"{
+        bottom:0;
+        right:-50px;
+    }
+}
+@mixin maxw($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+  @mixin minw($breakpoint) {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  }
